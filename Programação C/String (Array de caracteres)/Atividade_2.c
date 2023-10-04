@@ -95,6 +95,9 @@ int main() {
         } else if (str[i] == 'z'){
             letra_convertida = 'a';
             printf("%c", letra_convertida);
+        } else if (str[i] == ' '){
+            letra_convertida = ' ';
+            printf("%c", letra_convertida);
         }
     }
     return 0;

@@ -21,7 +21,3 @@ int main(){
 
     return 0;
 }
-
-// scanf("%[^\n]%*c", str);
-// fgets(str, MAX_LIMIT, stdin);
-// gets(str);
