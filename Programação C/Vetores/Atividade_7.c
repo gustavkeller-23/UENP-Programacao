@@ -1,15 +1,18 @@
 #include <stdio.h>
 
-int maior(int x, int y){
-    if (x > y){
-        return x;
+int maior(int x[], int y){
+    int i, maiorval = 0;
+    for (i = 0; i < y; i++){
+        if (x[i] > maiorval){
+            maiorval = x[i];
+        }
     }
-    return y;
+    return maiorval;
 }
 
 int main() {
     
-    int n, maior_valor =0;
+    int n;
 
     printf("Quantos numeros voce quer digitar?\n");
     scanf("%d", &n);
@@ -19,11 +22,9 @@ int main() {
     for (int i = 0; i < n; i++){
         printf("digite um numero: ");
         scanf("%d", &vet[i]);
-
-        maior_valor = maior(vet[i], maior_valor);
     }
-    
-    printf("O maior valor e %d", maior_valor);
+
+    printf("O maior valor e %d", maior(vet, n));
 
     return 0;
 }
