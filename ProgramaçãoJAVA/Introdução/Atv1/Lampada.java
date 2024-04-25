@@ -1,3 +1,5 @@
+package Atv1;
+
 public class Lampada {
     
     boolean ligada;

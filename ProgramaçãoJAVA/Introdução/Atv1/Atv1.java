@@ -1,4 +1,4 @@
-// Fazer uma lâmpada acender e apagar
+package Atv1;
 
 public class Atv1{
 
