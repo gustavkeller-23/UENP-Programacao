@@ -1,8 +1,0 @@
-Nome: asd
-
-Numero do registro: 13
-Preco: 13.000000
-Nome: dsa
-
-Numero do registro: 32
-Preco: 32.000000
