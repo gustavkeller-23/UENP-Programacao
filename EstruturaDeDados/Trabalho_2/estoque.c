@@ -18,6 +18,7 @@ Arvore* CriaArvore(){
 }
 
 Medicamento* CriaMedicamento(char *nome, int codigo, float valor, int *data_de_validade){
+
     Medicamento *m = (Medicamento *) malloc (sizeof(Medicamento));
     strcpy(m->nome, nome);
     m->codigo = codigo;
@@ -158,10 +159,11 @@ Arvore* AtualizaArvorePreco(FILE *fp, Arvore *a, int id_medicamento, float preco
     }
 }
 
-Arvore* arv_libera(Arvore* a){
+Arvore* ArvoreLibera(Arvore* a){
     if(a != NULL){
-        arv_libera(a->esq); /* libera sae */
-        arv_libera(a->dir); /* libera sad */
+        ArvoreLibera(a->esq); /* libera sae */
+        ArvoreLibera(a->dir); /* libera sad */
+        free(a->m);
         free(a); /* libera raiz */
     }
     return NULL;

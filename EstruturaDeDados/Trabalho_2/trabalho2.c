@@ -1,5 +1,19 @@
 #include "estoque.h"
 
+int dataSelect(char *c, char *l, int p);
+
+int dataSelect(char *c, char *l, int position){
+
+    while(l[position] != ' ' && l[position] != '\n'){
+        *c = l[position];
+        ++c;
+        position++;
+    }
+
+    return position+1;
+}
+
+
 int main(){
 
     Arvore *a = CriaArvore();
@@ -15,6 +29,8 @@ int main(){
     char texto[50]; // VARIAVEIS PARA LER E GUARDAR O TEXTO DE ENTRADA
     char *command = (char *) malloc (sizeof(char)); // VARIAVEL QUE É RESPONSÁVEL POR DEFINIR O COMANDO
     
+    char comandos[30];
+
     int position;
     
     do {
@@ -29,186 +45,70 @@ int main(){
             position++;
         }
         
-        //command = (char *) malloc ((position+1) * sizeof(char));
         command = realloc (command, (position+1) * sizeof(char));
         command[position] = '\0';
         strncpy(command, linha, position);
-        
-        // EXECUTA O COMANDO
-        
+        position++;
+
+
         if(strcmp("MEDICAMENTO", command) == 0){
             
-            char *nome_remedio = (char *) malloc (20 * sizeof(char));
+            char nome_remedio[20];
             int codigo;
             float val;
-            int validade[3];
+            int validade[3] = {0, 0, 0};
             
-            int separador = 0;
-            
-            while(separador < 6){
-                
-                if(linha[position] == ' '){
-                    separador++; // Conta os espaços
-                    position++;
-                }
-                
-                if(separador == 1){
-                    // DEFINE O NOME DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, ((position-old_position+1) * sizeof(char)));
-                    nome_remedio = (char *) malloc ((position-old_position+1) * sizeof(char));
-                    
-                    command[position-old_position+1] = '\0';                    
+            // RECEBE OS DADOS DO NOME DO MEDICAMENTO
+            for (int i = 0; i < 30; i++){
+                comandos[i] = ' ';
+            }
+            position = dataSelect(comandos, linha, position);
 
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    strcpy(nome_remedio, command);
-                }    
-                
-                
-                if(separador == 2){
-                    // DEFINE O CODIGO DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    codigo = atoi(command);
+            for (int i = 0; i < 20; i++){
+                if (comandos[i] == ' ')
+                    nome_remedio[i] = '\0';
+                else
+                    nome_remedio[i] = comandos[i];
+            }
+                            
+            // RECEBE OS DADOS DO CODIGO DO MEDICAMENTO
+            for (int i = 0; i < 30; i++){
+                comandos[i] = ' ';
+            }
+            position = dataSelect(comandos, linha, position);
+
+            codigo = atoi(comandos);
+
+            // RECEBE OS DADOS DO PRECO
+            for (int i = 0; i < 30; i++){
+                comandos[i] = ' ';
+            }
+            position = dataSelect(comandos, linha, position);
+
+            val = atof(comandos);                
+
+            // RECEBE OS DADOS DA DATA DE VALIDADE
+            for(int i = 0; i < 3; i++){
+                for (int j = 0; j < 30; j++){
+                    comandos[j] = ' ';
                 }
-                
-                
-                if(separador == 3){
-                    // DEFINE O PRECO DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    val = atof(command);
-                }
-                
-                
-                if(separador == 4){
-                    // DEFINE O DIA DE VALIDADE DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    validade[0] = atoi(command);
-                }
-                
-                
-                if(separador == 5){
-                    // DEFINE O MES DE VALIDADE DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    validade[1] = atoi(command);
-                }
-                
-                
-                if(separador == 6){
-                    // DEFINE O ANO DE VALIDADE DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    validade[2] = atoi(command);
-                }
+                position = dataSelect(comandos, linha, position);
+
+                validade[i] = atoi(comandos);
             }
 
             a = InsereArvoreMedicamento(saida, a, CriaMedicamento(nome_remedio, codigo, val, validade));
             
-            free(nome_remedio);
-
         }else if((strcmp("RETIRA", command)) == 0){
             
             int codigo;
             
-            if(linha[position] == ' '){
-                position++;
+            for (int i = 0; i < 30; i++){
+                comandos[i] = ' ';
             }
-                
-            int old_position = position;
-            
-            while(linha[position] != ' '){
-                position++;
-            }
-                    
-            command = realloc (command, (1 * sizeof(char)));
-            command = (char *) malloc (position-old_position * sizeof(char));
-                    
-            int count = 0;
-            while(linha[old_position] != ' '){
-                command[count] = linha[old_position];
-                old_position++;
-                count++;
-            }
-                
-            codigo = atoi(command);
+            position = dataSelect(comandos, linha, position);
+
+            codigo = atoi(comandos);
             
             a = RetiraArvoreMedicamento(saida, a, codigo);
 
@@ -223,133 +123,36 @@ int main(){
             
             int separador = 0;
             
-            while(separador < 3){
-                
-                if(linha[position] == ' '){
-                    separador++; // Conta os espaços
-                    position++;
-                }
-                
-                if(separador == 1){
-                    // DEFINE O CODIGO DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    codigo = atoi(command);
-                }
-                
-                
-                if(separador == 2){
-                    // DEFINE O NOVO PRECO DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    novo_val = atof(command);
-                }
+            for (int i = 0; i < 30; i++){
+                comandos[i] = ' ';
             }
+            position = dataSelect(comandos, linha, position);
+
+            codigo = atoi(comandos);
+
+
+            for (int i = 0; i < 30; i++){
+                comandos[i] = ' ';
+            }
+            position = dataSelect(comandos, linha, position);
+
+            novo_val = atof(comandos);
             
             AtualizaArvorePreco(saida, a, codigo, novo_val);
             
         }else if((strcmp("VERIFICA_VALIDADE", command)) == 0){
             
             int validade[3];
-            
-            int separador = 0;
-            
-            while(separador < 4){
-                
-                if(linha[position] == ' '){
-                    separador++; // Conta os espaços
-                    position++;
+
+            for (int i = 0; i < 3; i++){
+                for (int j = 0; j < 30; j++){
+                    comandos[j] = ' ';
                 }
-                
-                if(separador == 1){
-                    // DEFINE O DIA DE VALIDADE DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    validade[0] = atoi(command);
-                }
-                
-                
-                if(separador == 2){
-                    // DEFINE O MES DE VALIDADE DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    validade[1] = atoi(command);
-                }
-                
-                
-                if(separador == 3){
-                    // DEFINE O ANO DE VALIDADE DO REMEDIO
-                    int old_position = position;
-                    while(linha[position] != ' '){
-                        position++;
-                    }
-                    
-                    command = realloc (command, (1 * sizeof(char)));
-                    command = (char *) malloc (position-old_position * sizeof(char));
-                    
-                    int count = 0;
-                    while(linha[old_position] != ' '){
-                        command[count] = linha[old_position];
-                        old_position++;
-                        count++;
-                    }
-                    
-                    validade[2] = atoi(command);
-                }
+                position = dataSelect(comandos, linha, position);
+
+                validade[i] = atoi(comandos);
             }
-            
+           
             int ahVencido = 0;
             ahVencido = VerificaArvoreValidade(saida, a, validade, ahVencido);
             if (ahVencido == 0){
@@ -357,26 +160,13 @@ int main(){
             }
 
         }else if((strcmp("VERIFICA_ARVORE", command)) == 0){
+                        
+            for (int i = 0; i < 30; i++){
+                comandos[i] = ' ';
+            }
+            position = dataSelect(comandos, linha, position);
 
-            int codigo;
-            
-            // DEFINE O CODIGO DO REMEDIO
-            int old_position = position;
-            while(linha[position] != ' '){
-                position++;
-            }
-                    
-            command = realloc (command, (1 * sizeof(char)));
-            command = (char *) malloc (position-old_position * sizeof(char));
-                    
-            int count = 0;
-            while(linha[old_position] != ' '){
-                command[count] = linha[old_position];
-                old_position++;
-                count++;
-            }
-                    
-            codigo = atoi(command);
+            int codigo = atoi(comandos);
              
             if(VerificaArvoreMedicamento(a, codigo)){
                 fprintf(saida, "MEDICAMENTO ENCONTRADO\n");
@@ -389,9 +179,7 @@ int main(){
         free(linha);
     } while(strcmp(command, "FIM"));
 
-
-    //Limpeza da arvore
-    arv_libera(a);
+    ArvoreLibera(a);
 
     fclose(entrada);
     fclose(saida);

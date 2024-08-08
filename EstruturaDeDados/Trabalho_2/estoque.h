@@ -17,6 +17,6 @@ Arvore* AtualizaArvorePreco(FILE *fp, Arvore* a, int id_medicamento, float preco
 int VerificaArvoreMedicamento(Arvore *a, int id_medicamento);  /* Verifica se um medicamento e s t presente em uma determinada arvore */
 int VerificaArvoreValidade(FILE *fp, Arvore *a, int *data, int verificador);  /* Verifica se existe um medicamento vencido em uma determinada arvore */
 void ImprimeArvoreMedicamentos(FILE *fp, Arvore *a);  /* Imprime em ordem pelo codigo todos os medicamentos de uma arvore (em ordem) */
-Arvore *arv_libera(Arvore* a);
+Arvore *ArvoreLibera(Arvore* a);
 
 #endif 
