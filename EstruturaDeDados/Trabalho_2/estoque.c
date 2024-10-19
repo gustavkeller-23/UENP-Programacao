@@ -141,8 +141,8 @@ int VerificaArvoreValidade(FILE *fp, Arvore *a, int *data, int verificador){
 void ImprimeArvoreMedicamentos(FILE *fp, Arvore *a){
     if (a != NULL){
         ImprimeArvoreMedicamentos(fp, a->esq);
-        fprintf(fp, "%s %d %.1f %d %d %d\n", a->m->nome, a->m->codigo, a->m->valor, a->m->data[0], a->m->data[1], a->m->data[2]);
         ImprimeArvoreMedicamentos(fp, a->dir);
+        fprintf(fp, "%s %d %.1f %d %d %d\n", a->m->nome, a->m->codigo, a->m->valor, a->m->data[0], a->m->data[1], a->m->data[2]);
     }
 }
 
