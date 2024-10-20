@@ -18,10 +18,10 @@ Lista *removerCadastro(Lista *lst, int codigo);
 void imprimirChapas(Lista *lst);
 int verificarCodigo(int codigo, Lista *lst);
 void salvarVoto(int votoInserido, Lista *lst);
-void salvarBoletimPrimeiroTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos);
-void salvarBoletimSegundoTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos);
+void salvarBoletim(Lista *lst, int votosBrancos, int votosNulos, int votosValidos, int turno);
 int ahSegundoTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos);
 Lista *liberarChapasSegundoTurno(Lista *lst);
+void imprimirMaisVotadoPrimeiroTurno(Lista *lst, int votosValidos);
 
 /* PROMPTS.C */
 void imprimirIniciacaoUrna();
@@ -29,9 +29,7 @@ void imprimirOpcoesCadastroUrna();
 int perguntaCadastrarNovamente();
 void imprimirIniciacaoVotacao();
 void avisoVotacao();
-void escreverBoletimUrnaPrimeiroTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos);
-void escreverBoletimUrnaSegundoTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos);
+void escreverBoletimUrna(Lista *lst, int votosBrancos, int votosNulos, int votosValidos, int turno);
 void imprimirMensagemFIM();
-
 
 #endif 

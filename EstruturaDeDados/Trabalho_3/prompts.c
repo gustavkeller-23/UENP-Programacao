@@ -58,30 +58,13 @@ void avisoVotacao(){
     system("cls");
 }
 
-void escreverBoletimUrnaPrimeiroTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos){
+void escreverBoletimUrna(Lista *lst, int votosBrancos, int votosNulos, int votosValidos, int turno){
     system("cls");
     printf("--------------------------\n");
     printf("     Urna Processando     \n");
     printf("--------------------------\n");
-
-    salvarBoletimPrimeiroTurno(lst, votosBrancos, votosNulos, votosValidos);
-    Sleep(3000);
-    system("cls");
     
-    printf("----------------------------------------------\n");
-    printf("     Processamento realizado com sucesso!     \n");
-    printf("----------------------------------------------\n");
-    Sleep(2000);
-    system("cls");
-}
-
-void escreverBoletimUrnaSegundoTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos){
-    system("cls");
-    printf("--------------------------\n");
-    printf("     Urna Processando     \n");
-    printf("--------------------------\n");
-
-    salvarBoletimSegundoTurno(lst, votosBrancos, votosNulos, votosValidos);
+    salvarBoletim(lst, votosBrancos, votosNulos, votosValidos, turno);
     Sleep(3000);
     system("cls");
     

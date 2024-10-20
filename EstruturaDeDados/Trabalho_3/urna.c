@@ -122,24 +122,19 @@ void salvarVoto(int votoInserido, Lista *lst){
     system("cls");
 }
 
-void salvarBoletimPrimeiroTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos){
-    FILE *fp = fopen("BoletimPrimeiroTurno.txt", "w+");
-    fprintf(fp, "Resultados do Primeiro Turno\n\n");
+void salvarBoletim(Lista *lst, int votosBrancos, int votosNulos, int votosValidos, int turno){
+    FILE *fp; 
+    
+    if(turno == 1){
+        fp = fopen("BoletimPrimeiroTurno.txt", "w+");
+        fprintf(fp, "Resultados do Primeiro Turno\n\n");
+    } if(turno == 2) {
+        fp = fopen("BoletimSegundoTurno.txt", "w+");
+        fprintf(fp, "Resultados do Segundo Turno\n\n");
+    }
 
     for (Lista *p = lst; p != NULL; p = p->prox){
         fprintf(fp, "Chapa %d. Prefeito: %s Vice Prefeito: %s Votos: %d (%d%%).\n", p->numeroCandidato, p->nomeCandidato, p->nomeViceCandidato, p->qtdVotos, p->qtdVotos*100/votosValidos);
-    }
-
-    fprintf(fp, "\n\nVotos Nulos : %d.\nVotos Brancos : %d.\nVotos Válidos : %d.\nVotos Totais : %d.", votosNulos, votosBrancos, votosValidos, (votosNulos+votosBrancos+votosValidos));
-    fclose(fp);
-}
-
-void salvarBoletimSegundoTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos){
-    FILE *fp = fopen("BoletimSegundoTurno.txt", "w+");
-    fprintf(fp, "Resultados do Segundo Turno\n\n");
-
-    for (Lista *p = lst; p != NULL; p = p->prox){
-        fprintf(fp, "Chapa %d. Prefeito: %sVice Prefeito: %sVotos: %d (%d%%).\n\n", p->numeroCandidato, p->nomeCandidato, p->nomeViceCandidato, p->qtdVotos, p->qtdVotos*100/votosValidos);
     }
 
     fprintf(fp, "\n\nVotos Nulos : %d.\nVotos Brancos : %d.\nVotos Válidos : %d.\nVotos Totais : %d.", votosNulos, votosBrancos, votosValidos, (votosNulos+votosBrancos+votosValidos));
@@ -160,10 +155,53 @@ int ahSegundoTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValido
     return 1;
 }
 
+void imprimirMaisVotadoPrimeiroTurno(Lista *lst, int votosValidos){
+    Lista *p;
+    int maisVotado = 0;
+
+    for(p = lst; p != NULL; p = p->prox){
+        if(p->qtdVotos > maisVotado){
+            maisVotado = p->qtdVotos;
+        }
+    }
+    
+    for(p = lst; p != NULL; p = p->prox){
+        if(p->qtdVotos == maisVotado){
+            FILE *fp = fopen("BoletimPrimeiroTurno.txt", "a+");
+            fprintf(fp, "\n\nO vencedor foi:\nChapa %d. Prefeito: %sVice Prefeito: %s\n", p->numeroCandidato, p->nomeCandidato, p->nomeViceCandidato, p->qtdVotos, p->qtdVotos*100/votosValidos);
+            fclose(fp);
+            return;
+        }
+    }
+}
+
 Lista *liberarChapasSegundoTurno(Lista *lst){
-    int Maior = 0, segundoMaior = 0;
+    Lista *p, *temp;
+    int chapaMaisVotada = 0, segundaChapaMaisVotada = 0;
 
+    for(p = lst; p != NULL; p = p->prox){
+        if (p->qtdVotos > chapaMaisVotada && p->qtdVotos > segundaChapaMaisVotada){
+            if (chapaMaisVotada > segundaChapaMaisVotada)
+                segundaChapaMaisVotada = p->qtdVotos;
+            else
+                chapaMaisVotada = p->qtdVotos;
+        } else if(p->qtdVotos > chapaMaisVotada){
+            chapaMaisVotada = p->qtdVotos;
+        } else if(p->qtdVotos > segundaChapaMaisVotada){
+            segundaChapaMaisVotada = p->qtdVotos;
+        }
+    }
 
+    for(p = lst; p != NULL;){
+        if(p->qtdVotos < chapaMaisVotada && p->qtdVotos < segundaChapaMaisVotada){
+            temp = p;
+            p = p->prox;
+            lst = removerCadastro(lst, temp->numeroCandidato);
+        } else {
+            p->qtdVotos = 0;
+            p = p->prox;
+        }
+    }
 
     return lst;
 }

@@ -1,0 +1,14 @@
+Resultados do Segundo Turno
+
+Chapa 12. Prefeito: goidin
+ Vice Prefeito: pedrin
+ Votos: 8 (266%).
+Chapa 14. Prefeito: louco
+ Vice Prefeito: sabem
+ Votos: 7 (233%).
+
+
+Votos Nulos : 1.
+Votos Brancos : 0.
+Votos Válidos : 3.
+Votos Totais : 4.
