@@ -21,7 +21,6 @@ void salvarVoto(int votoInserido, Lista *lst);
 void salvarBoletim(Lista *lst, int votosBrancos, int votosNulos, int votosValidos, int turno);
 int ahSegundoTurno(Lista *lst, int votosBrancos, int votosNulos, int votosValidos);
 Lista *liberarChapasSegundoTurno(Lista *lst);
-void imprimirMaisVotadoPrimeiroTurno(Lista *lst, int votosValidos);
 
 /* PROMPTS.C */
 void imprimirIniciacaoUrna();

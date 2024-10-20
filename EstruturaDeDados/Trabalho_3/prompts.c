@@ -84,7 +84,7 @@ void imprimirMensagemFIM(){
     system("cls");
 
     printf("-----------------------\n");
-    printf("   FIM DAS ELEIÇÕES    \n");
+    printf("   FIM DAS ELEICOES    \n");
     printf("-----------------------\n");
 
     system("pause");

@@ -131,49 +131,50 @@ int main(){
     escreverBoletimUrna(lst, votosBrancos, votosNulos, votosValidos, turno);
 
     turno = 2;
-    if (ahSegundoTurno(lst, votosBrancos, votosNulos, votosValidos)){
-        if (votosValidos+votosBrancos+votosNulos >= QTD_VOTOS_SEG_TURNO){
-            printf("--------------------------------\n");
-            printf("     INICIANDO SEGUNDO TURNO    \n");
-            printf("--------------------------------\n");
+    if (ahSegundoTurno(lst, votosBrancos, votosNulos, votosValidos) && votosValidos+votosBrancos+votosNulos >= QTD_VOTOS_SEG_TURNO){
+        printf("--------------------------------\n");
+        printf("     INICIANDO SEGUNDO TURNO    \n");
+        printf("--------------------------------\n");
+        Sleep(1500);
+        system("cls");
 
-            system("cls");
+        lst = liberarChapasSegundoTurno(lst);
+        system("cls");
 
-            lst = liberarChapasSegundoTurno(lst);
-            imprimirChapas(lst);
-            votosBrancos = 0; votosNulos = 0; votosValidos = 0, votoInserido = 0;
+        imprimirChapas(lst);
+        system("pause");
+        system("cls");
 
-            while (votoInserido != -1){
-                printf(" ------------------------- \n");
-                printf("      Insira seu voto      \n");
-                printf(" ------------------------- \n");
-                scanf("%d", &votoInserido);
+        votosBrancos = 0; votosNulos = 0; votosValidos = 0, votoInserido = 0;
+
+        while (votoInserido != -1){
+            printf(" ------------------------- \n");
+            printf("      Insira seu voto      \n");
+            printf(" ------------------------- \n");
+            scanf("%d", &votoInserido);
             
-                if (votoInserido >= 0 && votoInserido <= 99){   
-                    if (votoInserido == 0){
-                        votosBrancos++;
-                        printf("Voce votou em Branco.");
-                        Sleep(2000);
-                        system("cls");
-                    }else if(!verificarCodigo(votoInserido, lst)){
-                        salvarVoto(votoInserido, lst);
-                        votosValidos++;
-                    }else{
-                        votosNulos++;
-                        printf("Seu voto foi Nulo.");
-                        Sleep(2000);
-                        system("cls");
-                    }
-                } else if(votoInserido != -1){
-                    printf("\n\nVoto inválido, tente outro código!\n");
+            if (votoInserido >= 0 && votoInserido <= 99){   
+                if (votoInserido == 0){
+                    votosBrancos++;
+                    printf("Voce votou em Branco.");
+                    Sleep(2000);
+                    system("cls");
+                }else if(!verificarCodigo(votoInserido, lst)){
+                    salvarVoto(votoInserido, lst);
+                    votosValidos++;
+                }else{
+                    votosNulos++;
+                    printf("Seu voto foi Nulo.");
                     Sleep(2000);
                     system("cls");
                 }
+            } else if(votoInserido != -1){
+                printf("\n\nVoto inválido, tente outro código!\n");
+                Sleep(2000);
+                system("cls");
             }
-            escreverBoletimUrna(lst, votosBrancos, votosNulos, votosValidos, turno);
-        } else {
-            imprimirMaisVotadoPrimeiroTurno(lst, votosValidos);
         }
+        escreverBoletimUrna(lst, votosBrancos, votosNulos, votosValidos, turno);
     }
 
     system("cls");
