@@ -13,6 +13,7 @@ int main ()
     scanf ("%d", &quesito4);
     printf ("O aluno compriu tal requisito?\n --> Structs <--\n 0 = nao    1 = sim\n");
     scanf ("%d", &quesito5);
+    
     if (quesito1 > 1 || quesito2 > 1 || quesito3 > 1 || quesito4 > 1 || quesito5 > 1 || quesito1 < 0 || quesito2 < 0 || quesito3 < 0 || quesito4 < 0 || quesito5 < 0) {
         printf ("Alguma das perguntas nao esta respondida corretamente\n");
     } else if (quesito1 == 1 || quesito2 == 1) {

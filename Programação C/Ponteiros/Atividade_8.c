@@ -5,7 +5,6 @@
 #include <string.h>
 
 int main(){
-
     char str[35] = "não gosto de programar em C";
     char *ptr_letra;
 

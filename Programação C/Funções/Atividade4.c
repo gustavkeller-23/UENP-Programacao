@@ -1,15 +1,14 @@
 #include <stdio.h>
 
-int potencia(int x, int n){
-	int num = 1;
-	for(int i = 1; i <= n; i++){
-		num = num * x;
+int potencia(int numero, int potencia){
+	int resultado = 1;
+	for(int i = 1; i <= potencia; i++){
+		resultado = resultado * numero;
 	}
-	return num;
+	return resultado;
 }
 
 int main () {
-
 	int numero, numero_elev;
 
 	printf("Digite um numero: \n");

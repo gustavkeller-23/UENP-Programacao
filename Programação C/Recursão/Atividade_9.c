@@ -6,25 +6,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int maiorElemento(int *vet, int tam, int maior, int i){
-    if (i < tam){
-        if (vet[i] > maior){
-            maior = vet[i];
-        }
-        maiorElemento(vet, tam, maior, i+1);
+int maiorElemento(int *vet, int tam, int maior, int count){
+    if (count < tam){
+        if (vet[count] > maior)
+            maior = vet[count];
+        maior = maiorElemento(vet, tam, maior, count+1);
     }
-    if (i == tam){
-        printf("%d", maior);
-    }
-    return 0;
+    return maior;
 }
 
 int main(){
-
     int vet[10] = {2, 3, 4, 5, 2, 7, 14, 3, 5, 10};
-    int maior = 0, i = 0;
+    int maior = 0, count = 0;
 
-    maiorElemento(vet, 10, maior, i);
+    printf("%d", maiorElemento(vet, 10, maior, count));
 
     return 0;
 }

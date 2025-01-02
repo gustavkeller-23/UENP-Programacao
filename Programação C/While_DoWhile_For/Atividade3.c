@@ -5,14 +5,13 @@ int main () {
 	float soma = 0;
 
 	do {	
-	printf("Digite um número\n");
-	scanf("%d", &num);
+		printf("Digite um número\n");
+		scanf("%d", &num);
 	} while (num <= 0);
 
-	for(int i = 1; i <= num; i++) {
+	for(int i = 1; i <= num; i++)
 	    soma = soma + ((float)1/i);
-	}
+	printf("A soma da %.2f", soma);
 
-	printf("A soma da %f", soma);
 	return 0;
 }

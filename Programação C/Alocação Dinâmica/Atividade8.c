@@ -22,12 +22,10 @@ void alunoMaiorNota(struct aluno *vetAlunos, int tam){
             numMaiorAluno = i;
         }
     }
-    
     printf("Maior nota: %d\nAluno: %s", maiorNota, vetAlunos[numMaiorAluno].nome);
 }
 
 int main(){
-
     int numAlunos;
     struct aluno *alunos;
 

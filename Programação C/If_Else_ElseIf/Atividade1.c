@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main ()
-{
+int main (){
     char letra, character;
     printf ("Digite uma letra: ");
     scanf ("%c", &character);
     letra = tolower (character);
-    if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+    
+    if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
         printf ("A letra e uma vogal");
-    } else {
+    else
         printf ("A letra e uma consoante");
-    }
+    
     return 0;
 }

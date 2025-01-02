@@ -59,7 +59,6 @@ void imprimirPersonagens(int quantPersonagens, struct Personagens personas[quant
 }
 
 int main() {
-
     int quantPersonagens;
 
     printf("Quantos personagens e monstros existem no seu jogo?\n");

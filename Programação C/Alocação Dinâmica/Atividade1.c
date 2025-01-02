@@ -11,7 +11,6 @@ int funcao(int vetX, int vetY){
 }
 
 int main(){
-
     int n;
 
     printf("Quantos numeros voce quer no vetor?\n");
@@ -22,7 +21,6 @@ int main(){
 
     for (int i = 0; i < n; i++){
         printf("Coloque os valores de vetX e vetY na casa %d \n", i+1);
-        //setbuf(stdin, NULL);
         scanf("%d%d", &vetX[i], &vetY[i]);
     }
 

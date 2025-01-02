@@ -126,9 +126,8 @@ void Favoritos(Jogos *jogos, int numJogos){
 
     for (int i = 0; i < numJogos; i++){
         for (int j = 0; j < strlen(nomeDeJogo); j++){
-            if (nomeDeJogo[j] == jogos[i].nome[j]){
+            if (nomeDeJogo[j] == jogos[i].nome[j])
                 count++;
-            }
         }
         
         if (strlen(nomeDeJogo) == count){

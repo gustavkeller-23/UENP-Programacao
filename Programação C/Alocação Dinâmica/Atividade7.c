@@ -22,19 +22,17 @@ int procurarLivro(struct Livros *livro, int tam){
     scanf("%d", &codigoLivro);
     
     for (int i = 0; i < tam; i++) {
-        if (codigoLivro == livro[i].codigo){
+        if (codigoLivro == livro[i].codigo)
             return 1;
-        }
     }
     return 0;
 }
 
 int main(){
-
     int cadastrar = 1;
-
     struct Livros *livro;
     livro = (struct Livros *) malloc (30*sizeof(struct Livros));
+    
     for (int i = 0; i < 30 && cadastrar!=0; i++){
         printf("Insira o codigo do livro: ");
         setbuf(stdin, NULL);
@@ -56,14 +54,7 @@ int main(){
         scanf("%d", &cadastrar);
     }
 
-    int achouLivro = procurarLivro(livro, 30);
-
-    if (achouLivro == 0){
-        printf("Nao temos esse livro!");
-    } else {
-        printf("Temos esse livro!");
-    }
-    
+    (procurarLivro(livro, 30)) ? printf("Nao temos esse livro!") : printf("Temos esse livro!");
 
     return 0;
 }

@@ -12,9 +12,8 @@ int buscaNumero(int numero, int **array, int linha, int coluna) {..}*/
 int buscaNumero(int numero, int **array, int linha, int coluna) {
     for(int i = 0; i < linha; i++){
         for (int j = 0; j < coluna; j++){
-            if (*(*(array+i)+j) == numero){
-                    return 1;
-            }
+            if (*(*(array+i)+j) == numero)
+                return 1;
         }
     }
     return 0;
@@ -29,9 +28,8 @@ int main(){
     scanf("%d %d", &lin, &col);
 
     matriz = (int **) malloc(lin*sizeof(int *));
-    for (int i = 0; i < lin; i++){
+    for (int i = 0; i < lin; i++)
         matriz[i] = (int *) malloc(col*sizeof(int));
-    }
 
     if (matriz == NULL){
         printf("Memoria insuficiente!");

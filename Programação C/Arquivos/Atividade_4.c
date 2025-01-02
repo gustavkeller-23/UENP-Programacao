@@ -27,12 +27,10 @@ char nomeArqu1[50], nomeArqu2[50], nomeArqu3[50];
         exit(1);
     }
 
-    while ((conteudo = fgetc(fp1)) != EOF) {
+    while ((conteudo = fgetc(fp1)) != EOF)
         fputc(conteudo, fp3);
-    }
-    while ((conteudo = fgetc(fp2)) != EOF) {
+    while ((conteudo = fgetc(fp2)) != EOF)
         fputc(conteudo, fp3);
-    }
 
     fclose(fp1);
     fclose(fp2);

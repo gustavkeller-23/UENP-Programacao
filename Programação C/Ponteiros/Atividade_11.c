@@ -11,15 +11,13 @@ int totalPalavras (char *str, char text[], int tam) {
     int palavras = 1;
     for (int i = 0; i < tam; i++){
         str = &text[i];
-        if (*str == ' '){
+        if (*str == ' ')
             palavras++;
-        } 
     }
     return palavras;
 }
 
 int main(){
-
     char texto[100], *strs;
     int totalDePalavras;
 

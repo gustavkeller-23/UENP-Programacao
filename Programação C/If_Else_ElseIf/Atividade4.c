@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <math.h>
 
-int main ()
-{
-    float a, b, c, delta;
+int main (){
+    float a, b, c;
     float raiz1, raiz2;
     printf ("Indique os valores a,b e c respectivamente: ");
     scanf ("%f %f %f", &a, &b, &c);
+    
     if (a == 0) {
-        printf ("A equacao nao e de segundo grau.");
+        printf("A equacao nao e de segundo grau.");
     } else {
-        delta = (b*b) + (-4*a*c);
+        float delta = (b*b) + (-4*a*c);
         if (delta < 0) {
             printf ("A equacao nao tem raizes reais\n");
         } else {

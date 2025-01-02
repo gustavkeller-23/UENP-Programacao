@@ -41,9 +41,8 @@ void cadastrarAlunos(struct cadastro alunos[MAX_ALUNOS]){
         printf("Deseja cadastrar mais algum aluno?\n   0 - nao\t 1 - sim\n");
         scanf("%d", &cadastrarMais);
         setbuf(stdin, NULL);
-        if (cadastrarMais == 0){
+        if (cadastrarMais == 0)
             break;
-        }
         numAlunosCadastrados++;
     }
 }

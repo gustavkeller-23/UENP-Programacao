@@ -5,7 +5,6 @@ exibir o vetor resultante.*/
 #include <stdio.h>
 
 int main() {
-    
     int matriz[3][5], coluna=0;
     
     for(int i = 0; i < 3; i++){
@@ -16,11 +15,10 @@ int main() {
     }
     
     for(int j = 0; j < 5; j++){
-    coluna = 0;
-        for(int i = 0; i < 3; i++){
+        coluna = 0;
+        for(int i = 0; i < 3; i++)
             coluna = coluna + matriz[i][j];
-        }
-    printf("Coluna %d: %d \n", (j+1), coluna);   
+        printf("Coluna %d: %d \n", (j+1), coluna);   
     }
 
     return 0;

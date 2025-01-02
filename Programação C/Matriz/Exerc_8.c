@@ -5,7 +5,6 @@ por meio de uma fun ̧c ̃ao, a soma dos elementos que n ̃ao pertencem a nenhum
 #include <stdio.h>
 
 int main() {
-    
     int tamanho_mat, soma=0;
     
     printf("Qual o tamanho da matriz? \n");
@@ -22,9 +21,8 @@ int main() {
     
     for(int i = 0; i < tamanho_mat; i++){
         for(int j = 0; j < tamanho_mat; j++){
-            if (j!=i && j+i+1 != tamanho_mat){
+            if (j!=i && j+i+1 != tamanho_mat)
                 soma = soma + matriz[i][j];
-            }
         }
     }
 

@@ -4,14 +4,10 @@ ordem crescente. Ao final, o programa deve mostrar o vetor ordenado.*/
 #include <stdio.h>
 
 int maior(int x, int y){
-    if (x > y){
-        return x;
-    }
-    return y;
+    return (x > y) ? x : y;
 }
 
 int main() {
-
     int n, maior_valor=0;
 
     printf("Quantos numeros voce quer digitar?\n");
@@ -28,9 +24,8 @@ int main() {
     
     for (int i=0; i <= maior_valor; i++){
         for (int j=0; j < n; j++){
-            if(vet[j] == i){
+            if(vet[j] == i)
                 printf("%d, ", vet[j]);
-            }
         }
     }
     printf("acabou");

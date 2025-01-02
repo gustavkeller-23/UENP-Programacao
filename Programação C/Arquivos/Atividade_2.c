@@ -20,7 +20,6 @@ typedef struct Livros{
 }Livros;
 
 int main(){
-
     int continuar = 0;
     Livros libroTemp;
 
@@ -47,9 +46,8 @@ int main(){
         fprintf(fp, "Numero do registro: %d\n", libroTemp.num_reg);
         fprintf(fp, "Preco: %lf\n", libroTemp.preco);
 
-        if(!continuar){
+        if(!continuar)
             break;
-        }
     }
 
     fclose(fp);

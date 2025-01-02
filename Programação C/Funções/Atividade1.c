@@ -1,11 +1,10 @@
 #include <stdio.h>
 
-int area(int x, int y){
-	return y * x;
+int area(int lado1, int lado2){
+	return lado1 * lado2;
 }
 
 int main (){
-	
 	int n, lado1, lado2;
 
 	printf("Quantas areas voce pretende calcular?\n");

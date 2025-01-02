@@ -11,8 +11,10 @@ int main () {
     int dinheiro, cafes ,troco;
     printf ("Quantos reais vao ser inseridos? \n");
     scanf ("%d", &dinheiro);
+
     troco = dinheiro % 7;
     cafes = dinheiro / 7;
+    
     printf ("O troco perdido sera de R$%d\n", troco);
     printf ("O numero de cafes recebidos sera de %d\n", cafes);
     return 0;

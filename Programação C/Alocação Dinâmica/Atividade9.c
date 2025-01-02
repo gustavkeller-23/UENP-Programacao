@@ -7,18 +7,15 @@ acimanid oacacola”.*/
 #include <stdlib.h>
 
 int main(){
-
     char *palavra;
-
-    palavra = (char *) calloc(255,sizeof(char));
+    palavra = (char *) calloc (255,sizeof(char));
 
     printf("Digite uma frase: ");
     setbuf(stdin, NULL);
     fgets(palavra, 255, stdin);
 
-    for (int i = 255; i >= 0; i--){
+    for (int i = 255; i >= 0; i--)
         printf("%c", palavra[i]);
-    }
     
 
     return 0;

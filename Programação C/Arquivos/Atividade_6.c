@@ -15,9 +15,8 @@ void verMatriz(int col, int lin, int mat[lin][col]){
     }
 
     for (int i = 0; i < lin; i++){
-        for (int j = 0; j < col; j++){
+        for (int j = 0; j < col; j++)
             fprintf(fp, "%d ", mat[i][j]);
-        }
         fprintf(fp, "\n");
     }
 
@@ -25,7 +24,6 @@ void verMatriz(int col, int lin, int mat[lin][col]){
 }
 
 int main(){
-
     int linha = 4, coluna = 5, count = 0;
     int matriz[linha][coluna];
 

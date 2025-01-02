@@ -5,7 +5,7 @@ int main() {
     int j=0, k=0;
     int par[j], impar[k];
 
-    for (int i=0; i<10; i++){
+    for (int i = 0; i < 10; i++){
         printf("Digite um numero: \n");
         scanf("%d", &numeros[i]);
 
@@ -19,12 +19,12 @@ int main() {
     }
     
     printf("Os numeros pares sao:\n");
-    for (int i=0; i<j; i++){
+    for (int i=0; i<j; i++)
         printf("%d ", par[i]);
-    }
+    
     printf("\nOs numeros impares sao:\n");
-    for (int i=0; i<k; i++){
+    for (int i=0; i<k; i++)
         printf("%d ", impar[i]);
-    }
+    
     return 0;
 }

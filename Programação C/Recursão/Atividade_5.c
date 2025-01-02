@@ -5,27 +5,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int potencia(int numero1, int numero2, int contador, int total){
+int potencia(int numero1, int numero2, int contador){
     contador += 1;
-    if(contador <= numero2){
-        total = total * numero1;
-        total = potencia(numero1, numero2, contador, total);
-    }
-    return total;
+    if(contador <= numero2)
+        return numero1 * potencia(numero1, numero2, contador);
+    return numero1;
 }
 
 int main(){
-
-    int num1, num2, count = 1, val = 0;
+    int num1, num2, count = 1;
 
     printf("Digite 2 numeros: ");
     scanf(" %d %d", &num1, &num2);
 
-    val = num1;
-
-    val = potencia(num1, num2, count, val);
-
-    printf("A potencia de %d^%d deu %d", num1, num2, val);
+    printf("A potencia de %d^%d deu %d", num1, num2, potencia(num1, num2, count));
 
     return 0;
 }

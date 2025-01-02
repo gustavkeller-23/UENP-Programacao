@@ -4,7 +4,6 @@ sua transposta.*/
 #include <stdio.h>
 
 int main() {
-    
     int tamanho_mat;
     
     printf("Qual o tamanho da matriz? \n");
@@ -20,9 +19,8 @@ int main() {
     }
     
     for(int j = 0; j < tamanho_mat; j++){
-        for(int i = 0; i < tamanho_mat; i++){
+        for(int i = 0; i < tamanho_mat; i++)
             printf("%d ", matriz[i][j]);
-        }
         printf("\n");
     }
 

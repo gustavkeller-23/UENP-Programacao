@@ -15,9 +15,8 @@ int main(){
     tamanho_da_frase = strlen(frase);
 
     printf("A frase foi %s, e agora e: ", frase);
-    for (i = tamanho_da_frase-1; i >= 0; i--){
+    for (i = tamanho_da_frase-1; i >= 0; i--)
         printf("%c", frase[i]);
-    }
 
     return 0;
 }

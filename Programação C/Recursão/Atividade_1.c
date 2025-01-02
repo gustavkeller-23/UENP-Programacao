@@ -5,17 +5,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int imprimirPares(int numEscolhido){
+void imprimirPares(int numEscolhido){
     if (numEscolhido > 0){
         printf("%d ", numEscolhido);
-        return imprimirPares(numEscolhido-2);
+        imprimirPares(numEscolhido-2);
+        return;
     }
-    printf("0");
-    return 0;
+    printf("0 ");
+    return;
 }
 
 int main(){
-
     int num_escolhido;
 
     printf("Digite um numero: ");

@@ -18,20 +18,16 @@ int main(){
         exit(1);
     }
 
-    for (int i = 0; i < 20; i++){
+    for (int i = 0; i < 20; i++)
         fprintf(fp, "%d\n", vetorA[i]);
-    }
-
     fclose(fp);
 
     fp = fopen("numeros.txt", "r");
 
     for (int i = 0; i < 20; i++){
         fscanf(fp, "%d\n", &vetorB[i]);
-
         printf("%d\n", vetorB[i]);
     }
-
     fclose(fp);
 
     return 0;

@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main ()
-{
+int main (){
     float base, altura, area;
     printf ("Digite a base e a atura do triangulo, repectivamente: ");
     scanf ("%f%f", &base, &altura);

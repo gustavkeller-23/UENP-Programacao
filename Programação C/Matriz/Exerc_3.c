@@ -20,15 +20,13 @@ int main() {
             if(matriz[i][j]%3 == 0){
                 mult[x] = matriz[i][j];
                 x++;
-                printf("%d", x);
             }
         }
     }
     
     printf("Os Multiplos de 3 sao: \n");
-    for(int y = 0; y < x; y++){
+    for(int y = 0; y < x; y++)
         printf("%d, ", mult[y]);
-    }
     
     return 0;
 }

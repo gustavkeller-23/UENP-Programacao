@@ -1,44 +1,27 @@
 #include <stdio.h>
 
-int main ()
-{
-    float item1 = 5.3, item2 = 6.0, item3 = 3.2, item4 = 2.5, valor;
+int main (){
+    float precoItem1 = 5.3, precoItem2 = 6.0, precoItem3 = 3.2, precoItem4 = 2.5, valorTotal = 0;
     int produto, quantidade;
-    char pergunta, questao;    
     printf ("Defina o numero do produto e a quantidade que ira comprar: ");
     scanf ("%d %d", &produto, &quantidade);
-    switch (produto)
-    {
+    
+    switch (produto){
         case (1):
-            valor = item1 * quantidade;
-            if (valor > 15){
-                valor = valor - (valor / 100 * 15);
-                printf ("O valor e de %.2f", valor); break;
-            }
-            printf ("O valor sera de %.2f", valor); break;
+            valorTotal = precoItem1 * quantidade; break;
         case (2):
-            valor = item2 * quantidade;
-            if (valor > 15){
-                valor = valor - (valor / 100 * 15);
-                printf ("O valor e de %.2f", valor); break;
-            }
-            printf ("O valor sera de %.2f", valor); break;
+            valorTotal = precoItem2 * quantidade; break;
         case (3):
-            valor = item3 * quantidade;
-            if (valor > 15){
-                valor = valor - (valor / 100 * 15);
-                printf ("O valor e de %.2f", valor); break;
-            }
-            printf ("O valor sera de %.2f", valor); break;
+            valorTotal = precoItem3 * quantidade; break;
         case (4):
-            valor = item4 * quantidade;
-            if (valor > 15){
-                valor = valor - (valor / 100 * 15);
-                printf ("O valor e de %.2f", valor); break;
-            }
-            printf ("O valor sera de %.2f", valor); break;
+            valorTotal = precoItem4 * quantidade; break;
         default:
             printf ("Esse produto nao esta na lista."); break;
     }
+
+    if(valorTotal > 15)
+        valorTotal = valorTotal - (valorTotal / 100 * 15);
+    printf ("O valor e de %.2f", valorTotal);
+
     return 0;
 }

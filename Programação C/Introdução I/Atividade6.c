@@ -5,14 +5,17 @@ vari ́aveis.*/
 #include <stdio.h>
 
 int main () {
-    float x, y, z;
+    float x, y, temp;
     printf ("Digite o valor de x: ");
     scanf ("%f", &x);
+
     printf ("Digite o valor de y: ");
     scanf ("%f", &y);
-    z = x;
+    
+    temp = x;
     x = y;
-    y = z;
+    y = temp;
+    
     printf ("variavel x: %.2f, e a variavel y: %.2f", x, y);
     return 0;
 }

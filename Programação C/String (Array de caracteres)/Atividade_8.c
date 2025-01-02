@@ -8,7 +8,6 @@
 #include <ctype.h>
 
 int main(){
-
     int count = 0, linha = -1;
     char palavra[15];
     char matriz[5][100];
@@ -18,9 +17,8 @@ int main(){
         fgets(matriz[i], sizeof(matriz[i]), stdin);
     }
     printf("Strings digitadas:\n");
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
         printf("string %d: %s", i + 1, matriz[i]);
-    }
 
     printf("Digite uma palavra: ");
     fgets(palavra, 15, stdin);
@@ -38,9 +36,8 @@ int main(){
         }
     }
 
-    if (linha == -1){
+    if (linha == -1)
         printf("A palavra nao existe na matriz");
-    }
     
     return 0;
 }

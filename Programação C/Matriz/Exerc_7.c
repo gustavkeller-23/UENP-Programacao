@@ -6,7 +6,6 @@ deve exibir a matriz resultante.*/
 #include <stdio.h>
 
 int main() {
-    
     const int x = 10;
     int tamanho_mat;
     
@@ -29,10 +28,9 @@ int main() {
     }
     
     for(int i = 0; i < tamanho_mat; i++){
-        for(int j = 0; j < tamanho_mat; j++){
+        for(int j = 0; j < tamanho_mat; j++)
             printf("%d ", matriz[i][j]);    
-        }
-    printf("\n");
+        printf("\n");
     }
 
     return 0;

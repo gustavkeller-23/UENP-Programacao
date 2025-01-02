@@ -12,7 +12,6 @@ int soma(int m1, int m2){
 }
 
 int main(){
-
     int lin, col;
     int *m1, *m2, *mSoma;
 
@@ -35,12 +34,8 @@ int main(){
         mSoma[i] = soma(m1[i], m2[i]);
     }
 
-    for (int i = 0; i < (lin*col); i++){
+    for (int i = 0; i < (lin*col); i++)
         printf("%d \n", mSoma[i]);
-    }
-    
-    
-    
 
     return 0;
 }

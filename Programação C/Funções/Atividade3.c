@@ -4,25 +4,21 @@
 float delta (int x, int y, int z){
 	int valor;
 	valor = sqrt(pow(y,2) - (4*x*z));
-	if (valor < 0){
+	if (valor < 0)
 		return 1;
-	}
-	if (valor == 0){
+	if (valor == 0)
 	    return 0;
-	}
 	return valor;
 }
 
 int main () {
-
 	int a, b, c;
 
 	do {
 		printf("Digite as letras da equacao: \n");
 		scanf("%d%d%d", &a, &b, &c);
-		if (a == 0){
-			printf ("Essa equacao nao e do segundo grau.\nDigite outra equacao.\n");
-		}	
+		if (a == 0)
+			printf ("Essa equacao nao e do segundo grau.\nDigite outra equacao.\n");	
 	} while (a == 0);
 
     

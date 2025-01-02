@@ -18,22 +18,19 @@ int main(){
 
     for (int i = 0; pal_1[i] != '\0'; i++){
         if (tolower(pal_1[i]) == tolower(pal_2[i])){
-            if (pal_1[i] == pal_2[i]){
+            if (pal_1[i] == pal_2[i])
                 iguais++;       
-            }
-        }else{
+        }else
             diferente++;
-        }
     }
     
-    if (diferente != 0){
+    if (diferente != 0)
         printf("As duas strings nao tem o mesmo conteudo.");
-    } else {
-        if ((int)iguais == (int)strlen(pal_1)){
+    else {
+        if ((int)iguais == (int)strlen(pal_1))
             printf("As duas strings tem o mesmo conteudo.");
-        } else {
+        else
             printf("As duas strings tem o mesmo conteudo, porem de tamanhos diferentes.");
-        }
     }
     
     return 0;

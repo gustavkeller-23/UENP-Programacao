@@ -7,14 +7,10 @@
 #include <string.h>
 
 int caracter_repetido(char letra_frase, char letra_escolhida){
-    if (tolower(letra_frase) == tolower(letra_escolhida)){
-        return 1;
-    }
-    return 0;
+    return tolower(letra_frase) == tolower(letra_escolhida);
 }
 
 int main(){
-
     int count = 0;
     char frase[255], carac;
 
@@ -23,9 +19,8 @@ int main(){
     printf("Digite um caracter: ");
     scanf("%c", &carac);
 
-    for (int i = 0; i < (int)strlen(frase); i++){
+    for (int i = 0; i < (int)strlen(frase); i++)
         count += caracter_repetido(frase[i], carac);
-    }
     
     printf("O caracter se repete %d vezes", count);
 

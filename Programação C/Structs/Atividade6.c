@@ -60,7 +60,6 @@ void imprimirAlunos(struct DadosAlunos alunos[NUMERO_DE_ALUNOS]) {
 }
 
 int main(){
-
     struct DadosAlunos alunos[NUMERO_DE_ALUNOS];
 
     lerDados(alunos);

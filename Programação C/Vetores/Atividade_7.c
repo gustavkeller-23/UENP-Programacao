@@ -1,17 +1,15 @@
 #include <stdio.h>
 
 int maior(int x[], int y){
-    int i, maiorval = 0;
+    int i, maiorVal = 0;
     for (i = 0; i < y; i++){
-        if (x[i] > maiorval){
-            maiorval = x[i];
-        }
+        if (x[i] > maiorVal)
+            maiorVal = x[i];
     }
-    return maiorval;
+    return maiorVal;
 }
 
 int main() {
-    
     int n;
 
     printf("Quantos numeros voce quer digitar?\n");

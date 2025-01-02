@@ -5,24 +5,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int imprimirPares(int num_inicio, int num_limite){
-    if (num_limite > num_inicio){
-        printf("%d ", num_inicio);
-        return imprimirPares(num_inicio+2, num_limite);
+void imprimirPares(int num_escolhido){
+    if (num_escolhido != 0){
+        imprimirPares(num_escolhido-2);
+        printf("%d ", num_escolhido);
+        return;
     }
-    printf("%d", num_inicio);
-    return 0;
+    printf("0 ");
+    return;
 }
 
 int main(){
-
-    int num_limite;
-    int num_inicio = 0;
+    int num_escolhido = 0;
 
     printf("Digite um numero: ");
-    scanf("%d", &num_limite);
+    scanf("%d", &num_escolhido);
 
-    imprimirPares(num_inicio, num_limite);
+    imprimirPares(num_escolhido);
 
     return 0;
 }

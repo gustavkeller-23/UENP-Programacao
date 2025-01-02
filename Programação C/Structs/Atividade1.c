@@ -23,15 +23,11 @@ void calculoDistancia(struct Ponto p1, struct Ponto p2) {
 }
 
 void armazenarValores(struct Ponto *p1, struct Ponto *p2){
-	printf("Defina o x do ponto 1: ");
-	scanf("%f", &p1->x);
-	printf("\nDefina o y do ponto 1: ");
-	scanf("%f", &p1->y);
+	printf("Defina o x e y do ponto 1: ");
+	scanf("%f %f", &p1->x, &p1->y);
 
 	printf("\nDefina o x do ponto 2: ");
-	scanf("%f", &p2->x);
-	printf("\nDefina o y do ponto 2: ");
-	scanf("%f", &p2->y);
+	scanf("%f %f", &p2->x, &p2->y);
 }
 
 int main(){

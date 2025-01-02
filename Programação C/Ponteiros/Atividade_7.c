@@ -6,7 +6,6 @@ até os dois ponteiros se encontrarem no meio do vetor.*/
 #include <stdio.h>
 
 int main(){
-
     int vet[20]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
     int *ptr_inicio, *ptr_fim;
 

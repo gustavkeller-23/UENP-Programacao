@@ -1,0 +1,19 @@
+Resultados do Segundo Turno
+
+Chapa 12. Prefeito: Gustav
+ Vice Prefeito: Pedrin
+ Votos: 3 (50%).
+Chapa 13. Prefeito: Gabriel
+ Vice Prefeito: Rafael
+ Votos: 3 (50%).
+
+
+Votos Nulos : 0.
+Votos Brancos : 0.
+Votos Válidos : 6.
+Votos Totais : 6.
+
+Chapa ganhadora: 13. 
+Prefeito: Gabriel
+Vice Prefeito: Rafael
+

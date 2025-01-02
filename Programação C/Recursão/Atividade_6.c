@@ -17,7 +17,6 @@ int somarNumeros(int i, int *vet, int soma){
 }
 
 int main(){
-
     int vet[5] = {3, 5, 10, 23, 1};
     int soma = 0, i = 0;
 

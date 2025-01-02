@@ -8,9 +8,8 @@
 #include <string.h>
 
 int contar_vogais(char letra){
-    if (tolower(letra) == 'a' || tolower(letra) == 'e' || tolower(letra) == 'i' || tolower(letra) == 'o' || tolower(letra) == 'u'){
+    if (tolower(letra) == 'a' || tolower(letra) == 'e' || tolower(letra) == 'i' || tolower(letra) == 'o' || tolower(letra) == 'u')
         return 1;
-    } 
     return 0;
 }
 
@@ -22,9 +21,8 @@ int main(){
     printf("Digite uma frase: ");
     fgets(frase, 255, stdin);
     
-    for (int i = 0; i < (int)strlen(frase); i++){
+    for (int i = 0; i < (int)strlen(frase); i++)
         vogais += contar_vogais(frase[i]);
-    }
 
     printf("Nessa frase existem %d vogais", vogais);
 

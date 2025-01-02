@@ -13,24 +13,19 @@ void verVetor(int tam, int vet[tam]){
         exit(1);
     }
 
-    for (int i = 0; i < tam; i++){
+    for (int i = 0; i < tam; i++)
         fprintf(fp, "%d\n", vet[i]);
-    }
-
     fclose(fp);
 }
 
 int main(){
-
     int tamanho = 20;
     int vetor[tamanho];
 
-    for (int i = 0; i < tamanho; i++){
+    for (int i = 0; i < tamanho; i++)
         vetor[i] = i;
-    }
 
     verVetor(tamanho, vetor);
-    
 
     return 0;
 }

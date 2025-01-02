@@ -5,25 +5,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int multiplicacao(int numero1, int numero2, int contador, int total){
-    if(contador <= numero2){
-        contador += 1;
-        total = total + numero1;
-        total = multiplicacao(numero1, numero2, contador, total);
-    }
-    return total;
+int multiplicacao(int numero1, int numero2, int contador){
+    contador += 1;
+    if(contador <= numero2)
+        return numero1 + multiplicacao(numero1, numero2, contador);
+    return numero1;
 }
 
 int main(){
 
-    int num1, num2, count = 1, val = 0;
+    int num1, num2, count = 1;
 
     printf("Digite 2 numeros: ");
     scanf(" %d %d", &num1, &num2);
 
-    val = multiplicacao(num1, num2, count, val);
-
-    printf("A multiplicacao deu %d", val);
+    printf("A multiplicacao deu %d", multiplicacao(num1, num2, count));
 
     return 0;
 }

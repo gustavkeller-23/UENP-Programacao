@@ -7,7 +7,6 @@ o valor 1 na diagonal secund ́aria e 0 nas demais posi ̧c ̃oes.*/
 #include <stdlib.h>
 
 int main(){
-
     int n;
     int **matriz;
 
@@ -15,23 +14,17 @@ int main(){
     scanf("%d", &n);
 
     matriz = (int **) malloc(n*sizeof(int*));
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
         matriz[i] = (int *) malloc(n*sizeof(int));
-    }
     
     for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
-            if (i == j || n-j-1 == i){
-                matriz[i][j] = 1;
-            } else {
-                matriz[i][j] = 0;
-            }
-        }
+        for (int j = 0; j < n; j++)
+            matriz[i][j] = (i == j || n-j-1 == i) ? 1 : 0;
     }
+
     for (int i = 0; i < n; i++){
-        for (int j = 0; j < n; j++){
+        for (int j = 0; j < n; j++)
             printf("%d ", matriz[i][j]);
-        }
         printf("\n");
     }
 

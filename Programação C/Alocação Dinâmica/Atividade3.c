@@ -8,9 +8,7 @@ identificados em vetor, tamb ́em alocado dinamicamente, e mostre-os na tela.*/
 #include <stdlib.h>
 
 int main(){
-
     int linhas, colunas, count = 0, num = 0;
-    //Criando as variáveis dinâmicas
     int *vetMult7, *matriz;
 
     printf("Digite o numero de linhas e colunas da matriz");
@@ -21,9 +19,8 @@ int main(){
     for (int i = 0; i < linhas*colunas; i++) {
         printf("Digite um valor pra matriz: ");
         scanf("%d", &matriz[i]);
-        if (matriz[i]%7 == 0) {
+        if (matriz[i]%7 == 0)
             count++;
-        }
     }
     vetMult7 = (int *) malloc(count*sizeof(int));
 
@@ -35,9 +32,8 @@ int main(){
     } 
 
     printf("O valores sao: ");
-    for (int i = 0; i < num; i++){
+    for (int i = 0; i < num; i++)
         printf("%d ", vetMult7[i]);
-    }
     
     return 0;
 }

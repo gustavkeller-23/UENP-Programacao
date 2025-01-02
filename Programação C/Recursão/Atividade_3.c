@@ -4,22 +4,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int conversor(int num){
-    if(num == 0){
-        return 0;
+void conversor(int num){
+    if(num != 0){
+        if(num == 1){
+            printf("1");
+            return;
+        }
+        printf("%d", num%2);
+        num = (int)num/2;
+        conversor(num);
     }
-    if(num == 1){
-        printf("1");
-        return 0;
-    }
-    printf("%d", num%2);
-    num = (int)num/2;
-    conversor(num);
 }
 
 int main(){
-
     int num;
 
     printf("Digite 1 numeros: ");

@@ -14,7 +14,6 @@ struct Matricula{
 };
 
 int main() {
-
     int quantAlunos;
 
     printf("A quantidade de alunos nas turmas: ");
@@ -31,9 +30,8 @@ int main() {
     }
     
     for (int i = 0; i < quantAlunos; i++){
-        if (alunos[i].quantDisciplinas == 2){
+        if (alunos[i].quantDisciplinas == 2)
             printf("O aluno: %d, esta nas duas disciplinas\n", alunos[i].numMatricula);    
-        }
     }
 
 

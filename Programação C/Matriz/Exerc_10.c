@@ -26,9 +26,8 @@ int main() {
     }
 
     for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 7; j++){
+        for(int j = 0; j < 7; j++)
             printf("%d ", matriz[i][j]);       
-        }
         printf("\n");
     }
 

@@ -52,7 +52,6 @@ void cadastrarUsuarios(int numUsuarios, struct Usuario usuariosRedeSocial[numUsu
 }
 
 int main() {
-
     int quantUsuarios;
 
     printf("Qual a quantidade de usuarios que voce quer cadastrar?\n");
@@ -67,26 +66,16 @@ int main() {
         printf("\n  -- USUARIO %d -- \n", i);
         printf("Idade: %d\n", usuariosRedeSocial[i].idade);
         printf("Nome: %s", usuariosRedeSocial[i].nome);
-        if(usuariosRedeSocial[i].sexo == 'm'){
-            //printf("Sexo:  %c\n", usuariosRedeSocial[i].sexo);
-            printf("Sexo:  MASCULINO\n");
-        } else {
-            printf("Sexo:  FEMININO\n");
-        }
+        (usuariosRedeSocial[i].sexo == 'm') ? printf("Sexo:  MASCULINO\n") : printf("Sexo:  FEMININO\n");
         switch (usuariosRedeSocial[i].estadoCivil){
-        //printf("Estado Civil: %c\n", usuariosRedeSocial[i].estadoCivil);
-        case 's':
-            printf("Estado Civil: SOLTEIRO\n");
-            break;
-        case 'c':
-            printf("Estado Civil: CASADO\n");
-            break;
-        case 'n':
-            printf("Estado Civil: NAMORANDO\n");
-            break;
-        default:
-            printf("Estado Civil: DIVORCIADO\n");
-            break;
+            case 's':
+                printf("Estado Civil: SOLTEIRO\n"); break;
+            case 'c':
+                printf("Estado Civil: CASADO\n"); break;
+            case 'n':
+                printf("Estado Civil: NAMORANDO\n"); break;
+            default:
+                printf("Estado Civil: DIVORCIADO\n"); break;
         }
         printf("Quantidade de amigos: %d\n", usuariosRedeSocial[i].quantAmigos);
         printf("Quantidade de Fotos: %d\n", usuariosRedeSocial[i].quantFotos);

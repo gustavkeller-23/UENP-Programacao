@@ -10,14 +10,13 @@ int main() {
         scanf("%d", &vet[n]);
         n++;
         
-        printf("Mais algum numero?");
+        printf("Deseja inserir mais numeros?");
         scanf("%d", &continuar);
     }
 
     for (int i = 0; i < n; i++){
-        if (vet[i] >= 10 && vet[i] <=50){
+        if (vet[i] >= 10 && vet[i] <=50)
             count++;
-        }
     }
     
     printf("Existem %d numeros entre 10 e 50", count);

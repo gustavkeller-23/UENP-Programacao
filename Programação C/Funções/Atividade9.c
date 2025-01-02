@@ -1,15 +1,10 @@
 #include <stdio.h>
 
-int segundos(int x, int y, int z){
-    int tempo;
-    tempo = x * 3600;
-    tempo = tempo + (y * 60);
-    tempo = tempo + z;
-    return tempo;
+int segundos(int hora, int min, int sec){
+    return (hora * 3600) + (min * 60) + sec;
 }
 
 int main () {
-
     int horario_hr, horario_min, horario_sec;
     
     printf("Digite que horas sao: \n");

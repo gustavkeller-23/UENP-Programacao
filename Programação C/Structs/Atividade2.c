@@ -30,7 +30,6 @@ void imprimirLojas(struct Loja lojas[NUMERO_DE_LOJAS], float mediaDosPrecos);
 
 
 void cadastrarLoja(struct Loja lojas[NUMERO_DE_LOJAS]) {
-
     int pararLoja = 1;
 
     while(pararLoja != 0 && numLoja != NUMERO_DE_LOJAS){
@@ -68,9 +67,8 @@ void cadastrarProdutosDaLoja(struct Loja lojas[NUMERO_DE_LOJAS], int numero_da_l
 void calcularMediaProdutos(struct Loja lojas[NUMERO_DE_LOJAS]) {
     
     float media = 0;
-    for (int i = 0; i < numLoja; i++){
+    for (int i = 0; i < numLoja; i++)
         media = media + lojas[i].produto.precoProdutos;
-    }
     media = media /numLoja;
     printf("\nA media dos precos dos produtos e: \n -- -- %f -- --\n", media);
     
@@ -89,7 +87,6 @@ void imprimirLojas(struct Loja lojas[NUMERO_DE_LOJAS], float mediaDosPrecos) {
 }
 
 int main() {
-
     struct Loja lojas[NUMERO_DE_LOJAS];
     
     cadastrarLoja(lojas);

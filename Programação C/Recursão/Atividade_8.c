@@ -9,14 +9,10 @@
 
 int palindromo(char *palavra, int tam, int val_init){
     if(palavra[val_init] == palavra[tam]){
-        if (tam < val_init || val_init == tam){
-            printf("Essa palavra e um palindromo\n");
-            return 0;
-        }
-        palindromo(palavra, tam-1, val_init+1);
-        return 0;
+        if (tam < val_init || val_init == tam)
+            return 1;
+        return palindromo(palavra, tam-1, val_init+1);;
     }
-    printf("Essa palavra nao e um palindromo\n");
     return 0;
 }
 
@@ -30,15 +26,13 @@ int main(){
     fgets(palavra, 20, stdin);
 
     for (int i = 0; i < 20; i++){
-        if(palavra[i] != '\0'){
+        if(palavra[i] != '\0')
             tam++;
-        }
-        if(palavra[i] == '\0'){
+        if(palavra[i] == '\0')
             break;
-        }
     }
 
-    palindromo(palavra, tam-2, base);
+    (palindromo(palavra, tam-2, base)) ? printf("Essa palavra e um palindromo\n") : printf("Essa palavra nao e um palindromo\n");
 
     return 0;
 }

@@ -9,7 +9,6 @@ int soma(int x, int y){
 }
 
 int main() {
-    
     int tamanho_mat;
     
     printf("Qual o tamanho da matriz? \n");
@@ -27,12 +26,10 @@ int main() {
     
     for(int i = 0; i < tamanho_mat; i++){
         for(int j = 0; j < tamanho_mat; j++){
-            if(j == i+1){
+            if(j == i+1)
                 total = soma(total,matriz[i][j]);
-            }
         }
     }
-    
     printf("A soma dos valores e: %d", total);
 
     return 0;

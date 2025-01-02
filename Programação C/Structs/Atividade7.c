@@ -55,8 +55,7 @@ int main(){
         if (codigo == 0)
             break;
         if (codigo < 0){
-            printf("Nao existe um codigo com esse valor");
-            continue;
+            printf("Nao existe um codigo com esse valor"); continue;
         }
         
         quantidade[num].codigo = codigo;
@@ -70,14 +69,11 @@ int main(){
     for (int i = 0; i < num-1; i++){
         for (int j = 0; j < quantCadastros; j++){
             if (quantidade[i].codigo == produtos[j].codigoID){
-                valorTotal = valorTotal + (produtos[j].preco * quantidade[i].quantidade);
-            }
+                valorTotal += produtos[j].preco * quantidade[i].quantidade;
         }
     }
     
     printf("O valor da conta ficou: %.2f", valorTotal);
     
-    
-
     return 0;
 }

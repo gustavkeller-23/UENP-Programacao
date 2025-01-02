@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int main () {
-	
 	int quant, num;
 	float media;
 
@@ -13,7 +12,7 @@ int main () {
 		scanf("%d", &num);
 		media = media + num; 
 	}
-
 	printf("A media desses numeros e %f", (media/quant));
+	
 	return 0;
 }

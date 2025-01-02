@@ -24,9 +24,8 @@ int main(){
             count++;
         }
     }
-    if(count == 0){
+    if(count == 0)
         printf("-1");
-    }
 
     return 0;
 }

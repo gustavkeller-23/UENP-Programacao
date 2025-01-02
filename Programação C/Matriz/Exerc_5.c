@@ -4,7 +4,6 @@ elementos da diagonal principal.*/
 #include <stdio.h>
 
 int main() {
-    
     int total = 0, matriz[5][5];
     
     for(int i = 0; i < 5; i++){
@@ -19,7 +18,6 @@ int main() {
         total = total + matriz[i][j];
         j++;
     }
-    
     printf("A media da diagonal e: %d", (total/5));
     
     return 0;

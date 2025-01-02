@@ -8,6 +8,7 @@ int main () {
     float salariobase, salariofinal;
     printf ("Quanto e seu salario-base?\n");
     scanf ("%f", &salariobase);
+    
     salariofinal = salariobase - ((salariobase / 100) * 12) + 50;
     printf("seu salario e de %0.2f\n", salariofinal);
     return 0;

@@ -13,9 +13,8 @@ int main(){
     fgets(frase, 255, stdin);
 
     for (int i = 0; i < 250; i++){
-        if (frase[i] == ' '){
+        if (frase[i] == ' ')
             count++;
-        }
     }
     
     printf("Existem %d espacos nessa frase", count);

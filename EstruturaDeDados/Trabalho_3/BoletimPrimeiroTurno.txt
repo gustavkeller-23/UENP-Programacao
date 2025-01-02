@@ -1,0 +1,22 @@
+Resultados do Primeiro Turno
+
+Chapa 12. Prefeito: Gustav
+ Vice Prefeito: Pedrin
+ Votos: 5 (55%).
+Chapa 13. Prefeito: Gabriel
+ Vice Prefeito: Rafael
+ Votos: 4 (44%).
+Chapa 25. Prefeito: Isa
+ Vice Prefeito: Giovana
+ Votos: 0 (0%).
+
+
+Votos Nulos : 3.
+Votos Brancos : 3.
+Votos Válidos : 9.
+Votos Totais : 15.
+
+Chapa ganhadora: 12. 
+Prefeito: Gustav
+Vice Prefeito: Pedrin
+

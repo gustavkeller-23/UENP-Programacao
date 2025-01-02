@@ -17,7 +17,6 @@ int vetor(int vetorCompleto[], int numeroDeItens, int posPassado){
 }
 
 int main(){
-
     int quant, pos;
 
     printf("Quantos numeros voce quer no vetor?");
@@ -26,9 +25,8 @@ int main(){
     int vet[quant];
 
     printf("Digite esses numeros: ");
-    for (int i = 0; i < quant; i++){
+    for (int i = 0; i < quant; i++)
         scanf("%d", &vet[i]);
-    }
     
     pos = vetor(vet, quant, pos);
     printf("O maior valor e %d e esta na posicao %d", vet[pos], pos+1);

@@ -4,7 +4,6 @@ imprima o vetor na ordem inversa.*/
 #include <stdio.h>
 
 int main() {
-
     int numeros;
 
     printf("Quantos numeros vc vai digitar?\n");
@@ -18,13 +17,13 @@ int main() {
     }
 
     printf("A ordem e: \n");
-    for (int i = 0; i<numeros; i++){
+    for (int i = 0; i < numeros; i++)
         printf("%d ", var[i]);
-    }
+    
     printf("\nA ordem invertida e: \n");
-    for (int i = numeros-1; i>=0; i--){
+    for (int i = numeros-1; i>=0; i--)
         printf("%d ", var[i]);
-    }
+    
     
     return 0;
 }

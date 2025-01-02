@@ -17,17 +17,14 @@ int main(){
         exit(1);
     }
 
-    for (int i = 0; i < 50; i++){
+    for (int i = 0; i < 50; i++)
         fprintf(fp, "%d\n", numeros[i]);
-    }
-
     fclose(fp);
 
     fp = fopen("numeros2.txt", "r");
 
     for (int i = 0; i < 50; i++){
         fscanf(fp, "%d\n", &num);
-
         soma += num;
     }
 

@@ -15,11 +15,10 @@ int main() {
     }
     
     for(int i = 0; i < 5; i++){
-    linha = 0;
-        for(int j = 0; j < 3; j++){
+        linha = 0;
+        for(int j = 0; j < 3; j++)
             linha = linha + matriz[i][j];
-        }
-    printf("Linha %d: %d \n", (i+1), linha);   
+        printf("Linha %d: %d \n", (i+1), linha);   
     }
 
     return 0;

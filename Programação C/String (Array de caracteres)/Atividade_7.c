@@ -5,16 +5,14 @@
 #include <stdio.h>
 
 int main(){
-
     char senha[20];
 
     printf("Digitte a senha para criptografa-la: ");
     fgets(senha, 20, stdin);
 
-    for(int i = 0; i < 20; i++){
+    for(int i = 0; i < 20; i++)
         if(senha[i] == 'a' || senha[i] == 'e' || senha[i] == 'i' || senha[i] == 'o' || senha[i] == 'u' || senha[i] == 'A' || senha[i] == 'E' || senha[i] == 'I' || senha[i] == 'O' || senha[i] == 'U'){
             senha[i] = '*';
-        }
     }
 
     printf("%s", senha);

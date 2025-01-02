@@ -3,6 +3,7 @@
 float IMC (int peso, float altura){
     return peso/(altura*altura);
 }
+
 int class(float tabela){
     if (tabela < 18.5) {
         return 1;
@@ -16,7 +17,6 @@ int class(float tabela){
 }
 
 int main () {
-
     int kilos;
     float metros, valor;
     
